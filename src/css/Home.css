@@ -2,6 +2,11 @@
   font-size: 20px;
   text-align: center;
   width: 100%;
-  margin-top: 20px;
-  color: brown;
+  color: white;
+}
+.para_div {
+  background: linear-gradient(to right, blue, green);
+  width: 100%;
+  height: 100px;
+  padding-top: 20px;
 }
