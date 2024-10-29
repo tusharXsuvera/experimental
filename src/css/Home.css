@@ -10,3 +10,19 @@
   height: 100px;
   padding-top: 20px;
 }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.left_item {
+  flex: 1;
+  display: flex;
+  gap: 5px;
+  background-color: black;
+  flex-wrap: wrap;
+}
+.item {
+  flex: 1;
+  background-color: rgb(149, 255, 0);
+}
