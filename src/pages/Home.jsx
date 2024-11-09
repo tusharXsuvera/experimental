@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Home() {
+  const [notificationSupported, setNotificationSupported] = useState(
+    "Notification" in window
+  );
+  const showNotification = () => {
+    if (notificationSupported) {
+      // Request permission to show notifications
+      Notification.requestPermission().then((permission) => {
+        if (permission === "granted") {
+          new Notification("Hello, this is a push notification!");
+        }
+      });
+    } else {
+      alert("Your browser does not support notifications");
+    }
+  };
+
   return (
     <>
       <div className="para_div">
@@ -27,6 +43,11 @@ export default function Home() {
         </div>
         <div className="item">item 2</div>
         <div className="item">item 3</div>
+      </div>
+      <h1 className="text-4xl font-bold underline">Hello world!</h1>
+      <div>
+        <h1>React Push Notifications Example</h1>
+        <button onClick={showNotification}>Show Push Notification</button>
       </div>
     </>
   );
